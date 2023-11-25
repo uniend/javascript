@@ -50,7 +50,6 @@ if (involved) {
     `${userName}님 환영합니다 ${userName}님께는 ${attempt}만큼의 기회가 주워집니다. 해당 횟수내에 정답을 맞춰주세요`
   );
   for (let i = 1; i <= 10; i++) {
-    attempt -= i;
     if (attempt > 0) {
       UserNum = parseInt(
         prompt(
@@ -63,6 +62,7 @@ if (involved) {
         alert(`정답입니다.`);
         break;
       } else {
+        attempt -= i;
         alert(`다시 입력해주세요 남은 기회는 :  ${attempt}입니다. `);
         continue;
       }
@@ -77,11 +77,4 @@ if (involved) {
   alert("아쉽습니다. 다음 기회에 만나요~ ");
 }
 
-// 내부로직틀렸네.. 내일 다시..
-
-// if(UserNum === SecretNum){
-//   alert(`정답입니다.`)
-// }else{
-//   alert(`틀린 답입니다. 다시 시도해주세요`)
-//   continue;
-// }
+// 왜 숫자가 이상하게 줄어들지 흐음
