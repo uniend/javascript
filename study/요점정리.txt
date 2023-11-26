@@ -259,6 +259,9 @@
     [ 논리 연산자 ]
       1. || (or) : 하나라도 true면 true 
           - or은 첫번째 true를 발견하는 즉시 평가를 멈춘다. 
+          < || 의 반환값 ? >
+            -->  마지막 true값을 반환한다. 
+
       2. && (and) : 모든 값이 ture면 ture 
           - 첫번째 false를 발견하는 즉시 평가를 멈춘다. 
       3. not (Not) : ture와 false를 서로 반대값으로 변환 
@@ -372,6 +375,7 @@ switch(평가){
       -- 함수 외부에서도 함수 내부에서도 사용가능한 변수를 전역에서 사용가능하다 하여 전역변수라 한다. 
 
 
+
   장점 : 
     1. 코드의 재사용이 효율적이다. 
     2. 유지보수가 간편하다. 
@@ -411,7 +415,108 @@ switch(평가){
       Qa) 매개변수가 있으나 매개변수를 전달하지 않을경우 ?
           -- undefined의값이 뜬다. 
 
+
+    < 인수가 하나도 전달되지 않을 경우 처리해주기  >
+       - 함수 호출부에 인수가 전달되지않을경우, 함수내 지역 변수에 undefined값이 할당된다. 
+       
+       Q) undefined값이 들어 왔을 때 2가지 처리 방법 
+          1. || 연산자 사용하기 
+          2. default 매개변수 사용하기 
+
+          < || 연산자 사용하기 >
+            // 이름을 부르는 기능을 하는 함수 
+            // 페이지 전체에 쓰이는 것이 아닌 특정 페이지에서 만 사용되는 기능으로 전역변수 필요없음 
+            function sayName(name){
+                let msg = name || 'replaceName'; // ||은 마지막 ture를 반환 
+                console.log(msg)
+            }
+            sayName();  //replaceName
+            sayName('Mike') // Mike
+
+          
+          < default 값 사용하기 >
+          function sayName(name = 'defaultName'){
+            let msg = `hello ${name}`
+            console.log(msg)
+          }
+          sayName();
+          sayName('Mike')
+
+
+    < 값을 반환하는 함수 >
+      -- return 활용하기 
+      -- return 우측 값을 반환한다. 
+      -- 지역변수 선언 없이 반환되는 값을 전역변수에 담아 활용할 수 있다.  
+      -- return이 있으면 즉시 함수가 종료되기 때문에 함수를 종료할려는 목적으로 사용하기도 한다. 
+      ※특이사항 
+      -- 리턴문이 없는 함수는 항상 undefined를 반환합니다. 
+      -- 우측에 반환할 값이 없이 return만 있어도 undefined를 반환합니다. 
+
+      function add(num1,num2){
+        return num1 + num2 
+      }
+
+      let result = add(1,2);
+      console.log(result);
+
+
+      function showError(){
+        alert('이 함수오류가 발생했습니다.)
+        return;
+        alert('이 부분은 절대 실행되지 않습니다.)
+      }
+
+      const result = showError();
+      console.log(result)
+
+
+
+      <함수 tip >
+      1. 한번에 한작업에 집중한다. 
+      2. 읽기 쉽고 어떤 동작인지 알 수 있는 네이밍 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 [ 지역변수와 전역변수의 차이 ]
+
+  1. 전역변수와 지역변수의 명은 동일할 수 있다.
+  2. 둘의 값은 서로 영향을 받지 않고 독립적인 값을 유지한다. 
+  3. 만약 지역변수가 없다면 동일한이름을 가진 전역변수의 값을 사용한다.
+  4. 전역변수 보다는 지역변수를 활용하는 습관을 가지자 
+      ㄴ 전역변수가 많이지면 관리가 힘들어진다. 
+
+Q) 전역변수와 함수 내부의 지역변수명이 동일 할 수 있을까 ? --> 가능하다 
+  1.  함수와 내부에서 동일한 명의 변수를 선언할 수 있다. 
+  2.  변수 내부의 값은 서로 영향을 받지 않는다. 
+
+  ex) let msg = '전역변수'
+      
+      console.log(msg) // 전역변수 
+
+      funtion sayMsg(name){
+        let msg = '지역변수'
+        console.log(msg + '' + name) // 지역변수 입니다. 
+        console.log( + name) 
+      }
+
+      sayMsg('입니다.')
+      sayMsg(); //undefined
+      console.log(msg) // 전역변수 
+
+
+  ex) let msg = '전역변수'
+      
+      console.log(msg) 
+
+      function sayMsg(name){
+        // let msg = '지역변수'
+        console.log(msg + '' + name)
+        console.log(name)  
+      }
+
+      sayMsg('입니다.')
+      console.log(msg)
+      --> 지역변수가 없다면 동일한 이름의 전역변수를 사용한다. 
+
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------
