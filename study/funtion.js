@@ -109,8 +109,44 @@
 
 
 
-sayHello();
+// sayHello();
 
-const sayHello = function(){
-  console.log('hello')
+// const sayHello = function(){
+//   console.log('hello')
+// }
+
+
+// 에러를 보여주는 함수를 한수 선언문, 함수 표현식, 화살표 함수 3가지 경우로 작성해보기 
+
+// 함수 선언문 
+
+// showError();
+
+// function showError(){
+//   console.log('에러발생!!')
+// }
+
+
+// 함수 표현식 
+
+// const showError = function(){
+//   console.log('에러 발생!!')
+// }
+
+// showError();
+
+
+//화살표 함수 
+
+const showError = () => console.log('에러 발생!!')
+showError();
+
+
+// 이름을 찾는 함수 화살표 함수로 변환 
+
+const sayName = name => {
+  let msg = `hello ${name}`
+  console.log(msg)
 }
+
+sayName('mike');
