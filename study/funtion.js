@@ -88,11 +88,29 @@
 
 
 
-function showError(){
-  alert('이 함수오류가 발생했습니다.')
-  return;
-  alert('이 부분은 절대 실행되지 않습니다.');
-}
+// function showError(){
+//   alert('이 함수오류가 발생했습니다.')
+//   return;
+//   alert('이 부분은 절대 실행되지 않습니다.');
+// }
 
-const result = showError();
-console.log(result)
+// const result = showError();
+// console.log(result)
+
+
+
+
+// 함수 호이스팅 비교해보기 
+// sayHello();
+
+// function sayHello(){
+//   console.log('hello')
+// }
+
+
+
+sayHello();
+
+const sayHello = function(){
+  console.log('hello')
+}
