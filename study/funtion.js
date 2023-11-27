@@ -138,15 +138,98 @@
 
 //화살표 함수 
 
-const showError = () => console.log('에러 발생!!')
-showError();
+// const showError = () => console.log('에러 발생!!')
+// showError();
 
 
-// 이름을 찾는 함수 화살표 함수로 변환 
+// // 이름을 찾는 함수 화살표 함수로 변환 
 
-const sayName = name => {
-  let msg = `hello ${name}`
-  console.log(msg)
+// const sayName = name => {
+//   let msg = `hello ${name}`
+//   console.log(msg)
+// }
+
+// sayName('mike');
+
+
+
+// 함수를 활용하여 게임만들기 
+// 문제를 내는 함수
+// 정답을 체크하는 함수 
+// 정답이면 다음 문제 넘어가기 
+// 실패면 4번 재도전 
+// 모든 문제 끝나면 게임종료 
+
+const screatNum ={
+  'one' : 1,
+  '이치' : 1,
+  '이거' : 1,
+  '우노' : 1,
 }
 
-sayName('mike');
+let attempt = 4;
+
+
+
+// 문제를 내는함수 
+
+function problem(QaNumber){
+  let answer;
+  switch(QaNumber){
+    case 0 :
+      answer = prompt(`해당 ${screatNum.one} 가 어떤 숫자를 나타내는지 맞춰주세요`)
+      checking(answer)
+      break;
+    case 1 :
+      answer = prompt(`해당 ${screatNum.이치} 가 어떤 숫자를 나타내는지 맞춰주세요`)
+      checking(answer)
+      break;
+    case 2 :
+      answer = prompt(`해당 ${screatNum.우노} 가 어떤 숫자를 나타내는지 맞춰주세요`)
+      checking(answer)
+      break;
+    case 3 :
+      answer = prompt(`해당 ${screatNum.이거} 가 어떤 숫자를 나타내는지 맞춰주세요`)
+      checking(answer)
+      break;
+    default : 
+      alert(`문제를 모두 소진하였습니다.`)
+  }
+}
+// 정답을 체크하는 기능을 하는 함수 
+const checking = function(userAnswer){
+
+}
+// 실패하면 기회 4번이 반복되는 함수 
+const reTry = () => {}
+
+
+
+let QA = confirm('숫자 맞추기 게임을 시작하시겠습니까?')
+
+if(QA){
+  alert(`게임을 시작하겠습니다. 당신에게는 한문제당 총 ${attempt}만큼의 기회가 주어집니다.`)
+  for(let i = 0; i < 4; i++){
+    if(i === 0){
+      problem(i)
+    }else if(i === 1){
+      problem(i)
+    }
+    else if(i === 2){
+      problem(i)
+    }
+    else if(i === 3){
+      problem(i)
+    }
+  }
+
+}else{
+  alert('아쉽네요, 다음기회에 만나요! ')
+}
+
+
+// 객체를 배우기 
+// 정답을 체킹하는 함수 작성
+// 전역변수에 담아
+// if문에서 정답이면 게임종료
+// 실패면 4번반복함수에서 반복시키고 실패면 그대로 게임종료 정답을 4번에 맞추면 2번문제로 넘어가게 진행 
