@@ -1,0 +1,20 @@
+
+div{
+  margin: 20px 0;
+}
+
+.changeInner{
+  text-align: center;
+  padding-top: 40px;
+}
+
+.flex{
+  margin: 120px 0;;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+#changeDisplayBlock{
+  display: none;
+}
