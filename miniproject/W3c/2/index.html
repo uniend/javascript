@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>innerHtml,write,alert,console.log</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-</head>
-<body>
-  <h1 id="title"></h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerHtml,write,alert,console.log</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1 id="title"></h1>
+    <p id="num1" ></p>
 
-  <script>
-    document.getElementById('title').innerHTML = 5+6
-  </script>
-</body>
+    <script>
+      document.getElementById("title").innerHTML = 5 + 6;
+      document.write("내부스크립트로 작성하기");
+      window.alert('내부스크립트 ALERT')
+      let a  = 5;
+      document.getElementById('num1').innerHTML = a;
+
+
+      
+    </script>
+  </body>
 </html>
