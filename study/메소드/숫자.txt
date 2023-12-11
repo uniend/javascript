@@ -1,0 +1,155 @@
+
+숫자와 관련된 메소드 정리 
+
+
+Number 메소드 
+
+<문자형을 숫자로 변경 >
+1. Number() 
+    - "" 문자열을 숫자로 반환 
+    - 정수, 소수점 모두 가능 
+    - 숫자형이 아닌 문자형이 있을 경우 : NaN
+    - 진접처리 불가,
+    - 빈 문자형일 경우 0으로 반환 
+
+2. parseInt()
+    - "" 문자열을 정수로 반환
+    - 소수점이라도 정수부분만 반환
+    - 진법 처리가능  
+    - 숫자형이 아닌 문자형이 시작 부분에 있을 경우 NaN
+    - 빈 문자형은 NaN 
+
+    ex) 
+    Number.parseInt("12");         // 12
+    Number.parseInt("12.34");      // 12
+    Number.parseInt("12문자열");   // 12
+    Number.parseInt("12 34 56");   // 12
+    Number.parseInt("문자열 56")); // NaN
+
+3. parseFloat()
+    -  "" 문자열을 숫자로 반환
+    - 소수점 반환 가능 
+    - 진법 처리불가 
+    - 숫자형이 아닌 문자형이 시작 부분에 있을 경우 NaN
+    - 빈 문자형 NaN 
+
+    ex) 
+    Number.parseFloat("12");         // 12
+    Number.parseFloat("12.34");      // 12.34
+    Number.parseFloat("12문자열");   // 12
+    Number.parseFloat("12 34 56");   // 12
+    Number.parseFloat("문자열 56")); // NaN
+
+
+<숫자를 문자형으로 변경> 
+
+4. toFixed()
+  - 소수점 몇째 자리까지 표현하는 메소드 
+  - 단!) 문자형으로 반환하기때문에 숫자형으로 변경해줄필요가 있다. 
+  - 단!) 0은 정수만, 숫자보다 큰 인수전달시 00을 채워 반환한다. 
+  
+  ex) 
+  var num = 3.14159265;  // Number 인스턴스를 생성함.
+  num.toFixed();         // 3
+  num.toFixed(2);        // 3.14
+  num.toFixed(4);        // 3.1416
+  3.14159265.toFixed(6); // 3.141593
+
+5. toString()
+  - 배열, 숫자등을 하나의 문자열로 반환한다.
+  - 기본적으로 ,로 구분한다. 
+  - 진법 변화가 가능하다. 
+
+  ex) 
+  let num = 10; 
+  const arr = [1,true,'자바스크립트']
+  arr.toString() // '1,true, 자바스크립트'
+  num.toString() // '10'
+  num.toString(2) // '1010'
+  num.toString(16) // 'fff'
+
+
+
+< NaN 판단 메소드 >
+
+6. isNaN()
+  - 전달된 값이 NaN인지 아닌지를 검사
+  - 오직 숫자인 값에서만 동작
+  - NaN인 경우에만 true를 반환
+
+
+
+  Math 메소드 
+
+  1. Math.min()
+    - 전달받은 값 중에서 가장 작은 수를 반환
+    - 인수가 전달되지 않으면 Infinity를 반환
+    - 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
+
+    ex) 
+    Math.min();    // Infinity
+    Math.min(1, 10, -100, -10, 1000, 0);     // -100
+    Math.min(1, 10, -100, -10, "-1000", 0);  // -1000
+    Math.min(1, 10, -100, -10, "문자열", 0); // NaN
+    --> 숫자가아닌 문자열일떄 NaN 약간 Number와 비슷하군 
+
+  2. Math.max()
+    - 전달받은 값 중에서 가장 작은 수를 반환
+    - 인수가 전달되지 않으면 -Infinity를 반환
+    - 인수 중에 비교할 수 없는 값이 포함되어 있으면 NaN을 반환
+
+    ex) 
+    Math.max(); // -Infinity
+    Math.max(1, 10, -100, -10, 100, 0);      // 100
+    Math.max(1, 10, -100, -10, "1000", 0);   // 1000
+    Math.max(1, 10, -100, -10, "문자열", 0); // NaN
+
+
+  3. Math.PI 
+    - 원주율 반환 
+
+  4. Math.ceil()
+    - 올림
+
+   ex) 
+   Math.ceil(10.95);  // 11
+   Math.ceil(11.01);  // 12
+   Math.ceil(11);     // 11
+   Math.ceil(-10.95); // -10
+   Math.ceil(-11.01); // -11
+  
+  
+  5. Math.floor() 
+    - 내림 
+  
+   ex) 
+   Math.floor(10.95);  // 10
+   Math.floor(11.01);  // 11
+   Math.floor(-10.95); // -11
+   Math.floor(-11.01); // -12
+
+  6. Math.trunc()
+    - 소수점 버림
+    - 음수 상환없이 소수점버림 
+
+  7. Math.round()
+    - 소수점 반올림 
+
+  8. Math.abs() 
+    - 절대값 반환 
+    Math.abs(-1) // 1
+
+  9. Math.pow()
+    - 제곱
+
+    Math.pow(2,10) // 2의 10승 1024 
+
+  10. Math.sqrt()
+    - 제곱근 반환 
+
+    Math.sqrt(16) // 4 
+
+  11. Math.random() 
+  -  1보다 작은 무작위 숫자(random number)를 반환
+  ex) 1~ 100 사이의 숫자 
+      Math.floor(Math.random()*100)+1 
