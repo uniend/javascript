@@ -25,25 +25,47 @@
 
 
 
-console.log(
-  3,
-  String( 3),
-  String(true),
-  String(false),
-  String(null),
-  String(undefined),
-  Number("1234"),
-  Number("1234gksrmf"),
-  Number(true),
-  Number(false),
-  Number(null),
-  Number(undefined),
-  Boolean(0),
-  Boolean(""),
-  Boolean(null),
-  Boolean(undefined),
-  Boolean(NaN),
-)
+// console.log(
+//   3,
+//   String( 3),
+//   String(true),
+//   String(false),
+//   String(null),
+//   String(undefined),
+//   Number("1234"),
+//   Number("1234gksrmf"),
+//   Number(true),
+//   Number(false),
+//   Number(null),
+//   Number(undefined),
+//   Boolean(0),
+//   Boolean(""),
+//   Boolean(null),
+//   Boolean(undefined),
+//   Boolean(NaN),
+// )
+
+
+
+
+
+let UndefinedValue;
+console.log(UndefinedValue + 10) // NaN
+console.log(Number(undefined)) // NaN
+console.log(UndefinedValue + '10') // undefined10 // +연산자의 경우 하나라도 문자열일시 문자열
+console.log(String(undefined)) // undefined
+console.log(UndefinedValue + true) // NaN
+console.log(Boolean(undefined)) // false
+
+
+console.log('여기서부터는 null')
+let NullValue = null;
+console.log(NullValue + 10) // 10 
+console.log(Number(null)) //0
+
+
+
+
 
 
 
