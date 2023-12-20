@@ -1,3 +1,5 @@
+
+// 초기 조건이 거짓이면 실행안함주의 
 // 구구단
 
 // for(let i = 1; i <=1; i++){
@@ -98,17 +100,17 @@
 //  ****
 // *****
 
-for (let i = 1; i <= 5; i++) {
-  let star = "";
-  let space2 = "";
-  for (let j = 5; j > i; j--) {
-    space2 += " ";
-  }
-  for (let k = 0; k < i; k++) {
-    star += "*";
-  }
-  console.log(space2 + star + "\n");
-}
+// for (let i = 1; i <= 5; i++) {
+//   let star = "";
+//   let space2 = "";
+//   for (let j = 5; j > i; j--) {
+//     space2 += " ";
+//   }
+//   for (let k = 0; k < i; k++) {
+//     star += "*";
+//   }
+//   console.log(space2 + star + "\n");
+// }
 
 // 5. 정삼각형 출력하기 - pattern5
 
@@ -119,16 +121,22 @@ for (let i = 1; i <= 5; i++) {
 //  *******
 // *********
 
-for (let i = 1; i < 5; i++) {
-  let star = "";
-  let space = "";
-  for (let j = 5; j > i; j--) {
-    space += " ";
-  }
-  for (let k = 0; k <= i; k++) {
-    star += "*";
-  }
-}
+
+// 반복 5개 
+// 공백 4에서 0으로 
+// 별 1개서 9개로 
+// for(let i = 1; i <= 5; i++){
+//   let star = '';
+//   let space = '';
+//   for(let j = 5; j > i; j--){
+//     space += ' ';
+//   }
+//   for(let j = 0; j < 2*i-1; j++){
+//     star += '*'
+//   }
+//   console.log(space + star+ '\n')
+// }
+
 
 // 6. 역정삼각형 출력하기 - pattern6
 
@@ -138,6 +146,25 @@ for (let i = 1; i < 5; i++) {
 //   *****
 //    ***
 //     *
+
+// 줄 5번 반복
+// 공백 0 에서 5로 
+// 별은 9에서 1로 
+// 곱하기를할떄는 i는 0으로 시작x
+
+
+// for(let i = 5; i > 0; i--){
+//   let star = '';
+//   let space = '';
+//   for(let j = 5; j >= i; j--){
+//     space += ' ';
+//   }
+//   for(let j = 0; j < 2*i-1; j++){
+//     star +='*';
+//   }
+//   console.log(space + star+ '\n')
+// }
+
 
 // 7. 다이아몬드 출력하기 - pattern7
 
@@ -152,6 +179,34 @@ for (let i = 1; i < 5; i++) {
 //    ***
 //     *
 
+
+// let star = '';
+// let space ='';
+
+
+// for(let i = 1; i<= 4; i++){
+//   let star = '';
+//   let space ='';
+//   for(let j = 5; j >= i; j --){
+//     space += ' ';
+//   }
+//   for(let j = 0; j < 2*i-1; j++){
+//     star += '*';
+//   }
+//   console.log(space + star+ '\n')
+// }
+// for(let i =5; i > 0; i--){
+//   let star = '';
+//   let space = '';
+//   for(let j = 5; j >= i; j--){
+//     space += ' ';
+//   }
+//   for(let j = 0; j < 2*i-1; j++){
+//     star += '*'
+//   } 
+//   console.log(space + star+ '\n')
+// }
+
 // 8. 별찍기 심화 - pattern8
 
 // [출력 이미지]
@@ -160,3 +215,27 @@ for (let i = 1; i < 5; i++) {
 // ***    ***
 // **      **
 // *        *
+
+// 54321
+// 0 2 4 6
+// 
+
+for(let i = 5; i >= 0; i--){
+  let star = '';
+  let star2 = '';
+  let space = '';
+  let space2 = ''
+  for(let j = 0; j < i; j++){
+    star += '*';
+  }
+  for(let j = 5; j > i; j--){
+    space += ' ';
+  }
+  for(let j = 5; j > i; j--){
+    space2 += ' ';
+  }
+  for(let j = 0; j < i; j++){
+    star2 += '*';
+  }
+  console.log( star+ space +space2+star2+ '\n')
+}
