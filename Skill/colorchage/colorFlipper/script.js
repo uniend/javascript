@@ -12,8 +12,13 @@ const Color = document.querySelector('.color');
 
 btn.addEventListener('click',()=>{
 
-  const randomIndex = 1; //랜덤으로 변경 필요 
+  const randomIndex = getRandomIndex(); //랜덤으로 변경 필요 
   document.body.style.backgroundColor = colors[randomIndex];
-  Color.innerHTML = randomIndex;
-
+  Color.innerHTML = colors[randomIndex];
+  
 })
+
+
+const getRandomIndex = () => {
+  return Math.trunc(Math.random()*colors.length)
+}
