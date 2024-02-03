@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>todo01</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todo01</title>
+  </head>
+  <body>
+    <form id="form_login">
+      <input type="text" placeholder="이이디를 입력하세요" required />
+      <button type="submit">로그인</button>
+    </form>
+    <h1 class="user_name"></h1>
+    <form id="form_todo">
+      <input type="text" placeholder="할 일을 입력하세요" required />
+      <button>추가하기</button>
+    </form>
+    <ul id="todolist"></ul>
+
+    <script src="login.js"></script>
+    <script src="todo.js"></script>
+  </body>
 </html>

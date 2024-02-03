@@ -7,7 +7,6 @@ const randomIndex = images[Math.floor(Math.random() * images.length)];
 // html 요소 생성
 
 const HtmlImg = document.createElement("img");
-
-document.body.append(HtmlImg); // append 뒤에 오게 /  prepend는 앞에 
+document.body.append(HtmlImg); // append 뒤에 오게 /  prepend는 앞에
 console.log(HtmlImg);
-HtmlImg.src=`image/${randomIndex}`;
+HtmlImg.src = `image/${randomIndex}`;
